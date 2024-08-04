@@ -3,6 +3,7 @@ import './App.css'
 import Home from './Components/Home'
 import Predict from './Components/Predict'
 import Navbar from './Components/Navbar'
+import Upload from './Components/Upload'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/predict" element={<Predict />} />
+          <Route path='/upload' element={<Upload/>} />
         </Routes>
       </Router>
     </>
