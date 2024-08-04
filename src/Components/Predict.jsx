@@ -33,7 +33,6 @@ const Predict = () => {
 
     return (
         <>
-
             <div className="flex justify-center">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {Object.keys(inputs).map((key, index) => (
@@ -52,8 +51,6 @@ const Predict = () => {
                         </div>
                     ))}
                 </div>
-
-
             </div>
             {response && (
                 <div className="mt-4 p-4 border border-gray-300 rounded-lg">
