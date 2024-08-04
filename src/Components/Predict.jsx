@@ -3,9 +3,9 @@ import axios from 'axios';
 
 const Predict = () => {
     const [inputs, setInputs] = useState({
-        query1: '', query2: '', query3: '', query4: '', query5: '', query6: '',
-        query7: '', query8: '', query9: '', query10: '', query11: '', query12: '',
-        query13: '', query14: '', query15: '', query16: '', query17: '', query18: '', query19: ''
+        SeniorCitizen: '', MonthlyCharges: '', TotalCharges: '', gender: '', Partner: '', Dependents: '',
+        PhoneService: '', MultipleLines: '', InternetService: '', OnlineSecurity: '', OnlineBackup: '', DeviceProtection: '',
+        TechSupport: '', StreamingTV: '', StreamingMovies: '', Contract: '', PaperlessBilling: '', PaymentMethod: '', tenure: ''
     });
 
     const [response, setResponse] = useState(null);
@@ -31,11 +31,18 @@ const Predict = () => {
         'Contract', 'Paperless Billing', 'Payment Method', 'Tenure'
     ];
 
+    const inputKeys = [
+        'SeniorCitizen', 'MonthlyCharges', 'TotalCharges', 'gender', 'Partner',
+        'Dependents', 'PhoneService', 'MultipleLines', 'InternetService', 'OnlineSecurity',
+        'OnlineBackup', 'DeviceProtection', 'TechSupport', 'StreamingTV', 'StreamingMovies',
+        'Contract', 'PaperlessBilling', 'PaymentMethod', 'tenure'
+    ];
+
     return (
         <>
             <div className="flex justify-center">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {Object.keys(inputs).map((key, index) => (
+                    {inputKeys.map((key, index) => (
                         <div key={index} className="flex flex-col">
                             <label className="block mb-2 text-lg font-medium text-white">
                                 {labels[index]}
