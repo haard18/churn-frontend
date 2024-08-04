@@ -15,7 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/predict" element={<Predict />} />
-          <Route path='/upload' element={<Upload/>} />
+          <Route path='/upload' element={<Upload></Upload>} />
         </Routes>
       </Router>
     </>
