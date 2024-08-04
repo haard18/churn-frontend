@@ -32,32 +32,39 @@ const Predict = () => {
     ];
 
     return (
-        <div className="flex justify-center">
-            <div className="flex flex-col gap-3 justify-center">
-                {Object.keys(inputs).map((key, index) => (
-                    <div key={index}>
-                        <label className="block mb-2 text-lg font-medium text-white">
-                            {labels[index]}
-                        </label>
-                        <input
-                            type="text"
-                            name={key}
-                            value={inputs[key]}
-                            onChange={handleChange}
-                            placeholder={`Enter ${labels[index]}`}
-                            className="input input-bordered w-full max-w-xs"
-                        />
-                    </div>
-                ))}
-                <button onClick={handleClick} className="btn btn-outline btn-primary mt-4">Predict</button>
-                {response && (
-                    <div className="mt-4 p-4 border border-gray-300 rounded-lg">
-                        <p><strong>Prediction:</strong> {response.prediction}</p>
-                        <p><strong>Confidence:</strong> {response.confidence}</p>
-                    </div>
-                )}
+        <>
+
+            <div className="flex justify-center">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {Object.keys(inputs).map((key, index) => (
+                        <div key={index} className="flex flex-col">
+                            <label className="block mb-2 text-lg font-medium text-white">
+                                {labels[index]}
+                            </label>
+                            <input
+                                type="text"
+                                name={key}
+                                value={inputs[key]}
+                                onChange={handleChange}
+                                placeholder={`Enter ${labels[index]}`}
+                                className="input input-bordered w-full max-w-xs"
+                            />
+                        </div>
+                    ))}
+                </div>
+
+
             </div>
-        </div>
+            {response && (
+                <div className="mt-4 p-4 border border-gray-300 rounded-lg">
+                    <p><strong>Prediction:</strong> {response.prediction}</p>
+                    <p><strong>Confidence:</strong> {response.confidence}</p>
+                </div>
+            )}
+            <div className="flex justify-center mt-4">
+                <button onClick={handleClick} className="btn btn-outline btn-primary">Predict</button>
+            </div>
+        </>
     )
 }
 
