@@ -1,7 +1,9 @@
-// import React from 'react';
+import  { useState } from 'react';
+import Alert from "../utils/Alert";
 
 const Upload = () => {
-  // Define the required headers
+  const [alertMessage, setAlertMessage] = useState('');
+  const [status,setStatus] = useState(false);
   const requiredHeaders = [
     "customerID",
     "gender",
@@ -39,10 +41,12 @@ const Upload = () => {
         const isValid = requiredHeaders.every((header) => headers.includes(header)) && headers.length === requiredHeaders.length;
 
         if (isValid) {
-          alert('File headers are valid!');
+          setAlertMessage('File uploaded successfully!');
+          setStatus(true);
           // Proceed with file upload or processing
         } else {
-          alert('Invalid file headers. Please upload a CSV with the correct headers.');
+          setAlertMessage('Invalid file format! Please upload a valid CSV file.');
+          setStatus(false);
           // Clear the file input (if necessary)
           event.target.value = '';
         }
@@ -61,6 +65,7 @@ const Upload = () => {
         className="file-input w-full max-w-xs"
         onChange={handleFileUpload}
       />
+      {alertMessage && <Alert message={alertMessage} status={status} />}
     </div>
   );
 };
