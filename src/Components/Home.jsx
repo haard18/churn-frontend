@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom"
+import { TypewriterEffectSmoothDemo } from "./Typewriter";
 
 const Home = () => {
     const navigate = useNavigate();
@@ -11,9 +12,9 @@ const Home = () => {
     return (
 
         <div className="flex gap-4 flex-col">
-          abcbacbanbcahb
-            <div>
 
+            <div>
+                <TypewriterEffectSmoothDemo/>
                 <button onClick={handleClick} className="btn btn-outline btn-primary">Go to Predict</button>
                 <button onClick={handleClick2} className="btn btn-outline btn-primary">Upload your custom Data</button>
             </div>
