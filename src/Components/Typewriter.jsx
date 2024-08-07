@@ -16,7 +16,7 @@ export function TypewriterEffectSmoothDemo() {
       text: "with",
     },
     {
-      text: "Cherno-O-Analyzer.",
+      text: "Churn-O-Analyzer.",
       className: "text-blue-500 dark:text-blue-500",
     },
   ];
