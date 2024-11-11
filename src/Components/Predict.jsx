@@ -17,7 +17,8 @@ const Predict = () => {
 
     const handleClick = async () => {
         try {
-            const response = await axios.post('https://churn-model-cyjl.onrender.com/predict', inputs);
+            // const response = await axios.post('https://churn-model-cyjl.onrender.com/predict', inputs);
+            const response = await axios.post('https://churn-model-1-1epf.onrender.com/predict', inputs);
             setResponse(response.data);
         } catch (error) {
             console.error('Error making prediction request:', error);
