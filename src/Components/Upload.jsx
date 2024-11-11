@@ -123,7 +123,7 @@ const Upload = () => {
 
     try {
       // Send request to the backend
-      const response = await axios.post('https://churn-model-cyjl.onrender.com/predict', {
+      const response = await axios.post('https://churn-model-1-1epf.onrender.com/predict', {
         SeniorCitizen: row[headers.indexOf('SeniorCitizen')],
         MonthlyCharges: row[headers.indexOf('MonthlyCharges')],
         TotalCharges: row[headers.indexOf('TotalCharges')],
